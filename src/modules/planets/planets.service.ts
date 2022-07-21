@@ -47,8 +47,10 @@ export class PlanetsService {
 
   async remove(id: number) {
     try {
-      await this.planetsRepository.delete({ id });
-      return { message: "Se eliminó el registro" };
+      const response = await this.planetsRepository.delete({ id });
+      if (response.affected) {
+        return { message: "Se eliminó el registro" };
+      } else return { message: "No se encontro el registro" };
     } catch (error) {
       console.log(error);
       throw new NotFoundException();

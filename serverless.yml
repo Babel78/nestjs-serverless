@@ -1,16 +1,18 @@
 service: nest-serverless
 
-provider:
-  name: aws
-  profile: nest-test
-  region: ${env:REGION}
-  stage: ${env:STAGE}
-  runtime: nodejs14.x
+useDotenv: true
 
 plugins:
   - serverless-offline
   - serverless-plugin-optimize
   - serverless-dotenv-plugin
+
+provider:
+  name: aws
+  profile: default
+  region: us-east-1
+  stage: dev
+  runtime: nodejs14.x
 
 package:
   exclude:
