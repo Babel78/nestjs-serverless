@@ -1,7 +1,12 @@
 import { ApiProperty, ApiQuery } from "@nestjs/swagger";
 import { IsNumber, IsString, IsNotEmpty } from "class-validator";
 
-export class CreatePlanetDto {
+export class responsePlanetDto {
+  @IsNumber()
+  @ApiProperty()
+  @IsNotEmpty()
+  id: number;
+
   @IsString()
   @ApiProperty()
   @IsNotEmpty()
@@ -46,4 +51,14 @@ export class CreatePlanetDto {
   @ApiProperty()
   @IsNotEmpty()
   superficie_agua: string;
+
+  @IsString()
+  @ApiProperty()
+  @IsNotEmpty()
+  createdAt: string;
+
+  @IsString()
+  @ApiProperty()
+  @IsNotEmpty()
+  updatedAt: string;
 }

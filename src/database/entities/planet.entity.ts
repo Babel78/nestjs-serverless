@@ -3,9 +3,10 @@ import {
   CreateDateColumn,
   Entity,
   PrimaryGeneratedColumn,
-} from 'typeorm';
+  UpdateDateColumn,
+} from "typeorm";
 
-@Entity('planet')
+@Entity("planet")
 export class Planet {
   @PrimaryGeneratedColumn()
   id: number;
@@ -36,4 +37,10 @@ export class Planet {
 
   @Column()
   superficie_agua: string;
+
+  @CreateDateColumn({ type: "timestamp" })
+  public createdAt!: Date;
+
+  @UpdateDateColumn({ type: "timestamp" })
+  public updatedAt!: Date;
 }
