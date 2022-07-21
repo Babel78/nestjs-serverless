@@ -64,14 +64,13 @@ Compilar el proyecto:
 $ npm run build
 ```
 
-Despues del deploy, podemos verificar si el servicio esta OK or no con el comando:
+Despues del deploy, podemos verificar si el servicio esta OK o no con el comando:
 ```
 $ sls offline start
 ```
 
 ##### Deploy a aws lambda. 
 
-Deploy
 ```
 $ sls deploy
 ```
